@@ -9,6 +9,7 @@ export async function GET({ url }) {
     return new Response(pdfBuffer, {
         headers: {
             "Content-Type": "application/pdf",
+            'Content-Disposition': 'attachment; filename*=resume.pdf'
         }
     });
 }
