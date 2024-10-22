@@ -26,20 +26,24 @@ export const getPdf = async (url) => {
         ignoreHTTPSErrors: true,
 		headless: true,
     };
-	const browser = await puppeteer.launch(options);
+	try {
+		const browser = await puppeteer.launch(options);
 
-	const page = await browser.newPage();
+		const page = await browser.newPage();
 
-	await page.goto(url, { waitUntil: 'networkidle2', timeout: 8000 });
+		await page.goto(url, { waitUntil: 'networkidle2', timeout: 8000 });
 
-	await page.emulateMediaType('screen');
-	const buffer = await page.pdf({
-		format: 'A4',
-		displayHeaderFooter: false,
-		printBackground: true
-	});
+		await page.emulateMediaType('screen');
+		const buffer = await page.pdf({
+			format: 'A4',
+			displayHeaderFooter: false,
+			printBackground: true
+		});
 
-	await browser.close();
+		await browser.close();
 
-	return buffer;
+		return buffer;
+	} catch (error) {
+		console.error(error);
+	}
 }
