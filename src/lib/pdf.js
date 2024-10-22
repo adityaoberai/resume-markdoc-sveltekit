@@ -22,7 +22,7 @@ export const getPdf = async (url) => {
 
 	const options = {
         args: chromeArgs,
-        executablePath: await chromium.executablePath,
+        executablePath: await chromium.executablePath(),
         ignoreHTTPSErrors: true,
 		headless: true,
     };
