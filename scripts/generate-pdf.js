@@ -1,20 +1,29 @@
-import { chromium } from "playwright";
+import { playwright } from 'playwright-aws-lambda';
+import { format } from 'prettier';
 
 const main = async () => {
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-  const resumeUrl = "http://localhost:5173";
+	const browser = await playwright.launchChromium({
+		headless: true
+	});
 
-  await page.goto(resumeUrl, { waitUntil: "networkidle" });
+	const context = await browser.newContext();
 
-  await page.emulateMedia({ media: "screen" });
+	const page = await context.newPage();
 
-  await page.pdf({
-    path: "static/resume.pdf",
-    printBackground: false,
-  });
+	const url = 'http://localhost:5173';
+	console.log('url', url);
 
-  return browser.close();
+	await page.goto(url);
+
+	await page.emulateMedia({ media: 'screen' });
+
+	await page.pdf({
+		path: 'static/resume.pdf',
+		format: 'a4',
+		printBackground: false
+	});
+
+	return browser.close();
 };
 
 main();

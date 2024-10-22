@@ -6,18 +6,15 @@ import { fileURLToPath } from 'url';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: [ 
-		vitePreprocess(), 
+	preprocess: [
+		vitePreprocess(),
 		markdoc({
 			layouts: {
-				resume: join(
-					dirname(fileURLToPath(import.meta.url)),
-					'./src/markdoc/layouts/Resume.svelte',
-				),	
+				resume: join(dirname(fileURLToPath(import.meta.url)), './src/markdoc/layouts/Resume.svelte')
 			}
-		}) 
+		})
 	],
-	extensions: [ '.markdoc', '.svelte' ],
+	extensions: ['.markdoc', '.svelte'],
 	kit: {
 		adapter: adapter()
 	}
