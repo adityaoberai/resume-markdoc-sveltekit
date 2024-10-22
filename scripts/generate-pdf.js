@@ -1,4 +1,4 @@
-import { playwright } from 'playwright-aws-lambda';
+const playwright = require("playwright-aws-lambda");
 
 const main = async () => {
 	const browser = await playwright.launchChromium({
