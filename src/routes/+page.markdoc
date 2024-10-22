@@ -1,0 +1,43 @@
+---
+name: John Doe
+role: Software Engineer
+layout: resume
+---
+
+## Work Experience
+
+### Software Engineer, ABC Company (Jan 2019 - Present)
+
+- Developed APIs for aggregation and analysis of automotive sales data using .NET 5
+
+## Education
+
+### Master of Science in Computer Science, XYZ University (2017 - 2019)
+
+- CGPA: 9.0
+
+### Bachelor of Engineering in Computer Science, XYZ University (2013 - 2017)
+
+- CGPA: 8.5
+
+## Skills
+
+- Programming Languages: JS, TS, C#, Java, Python
+- Frameworks: .NET, Spring Boot
+- Database: MySQL, MongoDB
+- Cloud: AWS, Azure
+
+## Projects
+
+### Project 1
+
+- Developed a web application for online shopping using Spring Boot
+
+### Project 2
+
+- Developed a web application for calendar management using ASP.NET
+
+## Contact Me
+
+- Email: john.doe@test.com
+- Phone: 1234567890

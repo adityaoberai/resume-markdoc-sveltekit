@@ -1,0 +1,31 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}  
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    background-color: dimgray;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+h2 {
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+hr {
+    border: 1px solid black;
+    width: 90%;
+}
