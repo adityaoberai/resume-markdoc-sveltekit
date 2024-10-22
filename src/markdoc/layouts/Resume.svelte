@@ -1,11 +1,12 @@
 <script>
     import "../styles/resume.css";
+    import { PUBLIC_APP_URL } from '$env/static/public';
     export let name;
     export let role;
 
 	let title = `${name} | ${role}`;
 
-    let downloadPage = `/download?url=${import.meta.env.APP_URL}`;
+    let downloadPage = `/download?url=${PUBLIC_APP_URL}`;
 </script>
 
 <svelte:head>
