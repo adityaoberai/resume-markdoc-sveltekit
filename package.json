@@ -3,7 +3,6 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"postinstall": "npx playwright install --with-deps",
 		"generate-pdf": "node scripts/generate-pdf.js",
 		"generate-pdf:ci": "PUBLIC_PRINT_PDF=true start-server-and-test dev http://localhost:5173 generate-pdf ",
 		"dev": "vite dev",
@@ -20,6 +19,7 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"playwright-aws-lambda": "^0.11.0",
+		"playwright-core": "^1.48.1",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"start-server-and-test": "^2.0.8",
