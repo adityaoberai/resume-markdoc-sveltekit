@@ -1,5 +1,4 @@
 import { playwright } from 'playwright-aws-lambda';
-import { format } from 'prettier';
 
 const main = async () => {
 	const browser = await playwright.launchChromium({
