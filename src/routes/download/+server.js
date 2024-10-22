@@ -1,0 +1,13 @@
+import { getPdf } from '$lib/pdf.js';
+
+export async function GET({ url }) {
+    let resumeUrl = url.searchParams.get('resume');
+
+    const pdfBuffer = await getPdf(resumeUrl);
+
+    return new Response(pdfBuffer, {
+        headers: {
+            "Content-Type": "application/pdf",
+        }
+    });
+}

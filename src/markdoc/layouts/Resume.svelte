@@ -1,11 +1,11 @@
 <script>
     import "../styles/resume.css";
-    import { env } from "$env/dynamic/public";
     export let name;
     export let role;
 
 	let title = `${name} | ${role}`;
-    let printPdf = (env.PUBLIC_PRINT_PDF == 'false') ? false : true;
+
+    let downloadPage = `/download?url=${import.meta.env.APP_URL}`;
 </script>
 
 <svelte:head>
@@ -21,14 +21,12 @@
 	<slot />
 </main>
 
-{#if printPdf == false}
-	<section id="download">
-		<a href="/resume.pdf">
-			Download
-			<span class="icon-download"></span>
-		</a>
-	</section>
-{/if}
+<footer id="download">
+    <a href={downloadPage} target="_blank">
+        Download
+        <span class="icon-download"></span>
+    </a>
+</footer>
 
 <style>
 	#download {
