@@ -1,13 +1,12 @@
 <script>
     import "../styles/resume.css";
-    import { PUBLIC_PRINT_PDF } from '$env/dynamic/public';
+    import { env } from "$env/dynamic/public";
     export let name;
     export let role;
 
     let title = `${name} | ${role}`;
 
-    let printPdf = (PUBLIC_PRINT_PDF == 'false') ? false : true;
-    console.log(printPdf);
+    let printPdf = (env.PUBLIC_PRINT_PDF == 'false') ? false : true;
 </script>
 
 <svelte:head>
