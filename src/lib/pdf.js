@@ -6,23 +6,12 @@ export const getPdf = async (url) => {
 	chromium.setHeadlessMode = true;
   	chromium.setGraphicsMode = false;
 
-	const chromeArgs = [
-		'--font-render-hinting=none', // Improves font-rendering quality and spacing
-		'--no-sandbox',
-		'--disable-setuid-sandbox',
-		'--disable-gpu',
-		'--disable-dev-shm-usage',
-		'--disable-accelerated-2d-canvas',
-		'--disable-animations',
-		'--disable-background-timer-throttling',
-		'--disable-restore-session-state'
-	];
-
 	const options = {
-        args: chromeArgs,
+        args: chromium.args,
+		defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath(),
         ignoreHTTPSErrors: true,
-		headless: true,
+		headless: chromium.headless,
     };
 	try {
 		const browser = await puppeteer.launch(options);
