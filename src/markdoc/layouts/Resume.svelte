@@ -6,7 +6,10 @@
 
     let title = `${name} | ${role}`;
 
-    let printPdf = (env.PUBLIC_PRINT_PDF == 'false') ? false : true;
+    let printPdf = true;
+    if (env.PUBLIC_PRINT_PDF == 'false') {
+        printPdf = false;
+    }
 </script>
 
 <svelte:head>
@@ -22,7 +25,7 @@
     <slot />
 </main>
 
-{#if printPdf == false }
+{#if printPdf === false }
 <section id="download">
     <a href="/resume.pdf">
         Download
