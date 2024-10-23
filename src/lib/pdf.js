@@ -15,9 +15,7 @@ export const getPdf = async (url) => {
 		'--disable-accelerated-2d-canvas',
 		'--disable-animations',
 		'--disable-background-timer-throttling',
-		'--disable-restore-session-state',
-		'--disable-web-security', // Only if necessary, be cautious with security implications
-		'--single-process', // Be cautious as this can affect stability in some environments
+		'--disable-restore-session-state'
 	];
 
 	const options = {
