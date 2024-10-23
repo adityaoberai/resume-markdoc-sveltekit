@@ -27,11 +27,10 @@ export const getPdf = async (url) => {
 			for(var i=0; i< elements.length; i++){
 				elements[i].parentNode.removeChild(elements[i]);
 			}
-		}, 'button');
+		}, 'footer');
 
 		const buffer = await page.pdf({
 			format: 'A4',
-			displayHeaderFooter: false,
 			printBackground: true
 		});
 
