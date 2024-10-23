@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { markdoc } from 'svelte-markdoc-preprocess';
 import { dirname, join } from 'path';
@@ -17,7 +17,10 @@ const config = {
 	extensions: ['.markdoc', '.svelte'],
 	kit: {
 		adapter: adapter()
-	}
+	},
+	adapter: adapter({
+      maxDuration: 60,
+    })
 };
 
 export default config;
