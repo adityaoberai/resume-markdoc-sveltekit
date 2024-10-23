@@ -21,6 +21,14 @@ export const getPdf = async (url) => {
 		await page.goto(url, { waitUntil: 'networkidle2', timeout: 8000 });
 
 		await page.emulateMediaType('screen');
+
+		await page.evaluate((selector) => {
+			var elements = document.querySelectorAll(selector);
+			for(var i=0; i< elements.length; i++){
+				elements[i].parentNode.removeChild(elements[i]);
+			}
+		}, 'button');
+
 		const buffer = await page.pdf({
 			format: 'A4',
 			displayHeaderFooter: false,
