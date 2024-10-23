@@ -15,7 +15,6 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"chrome-aws-lambda": "^10.1.0",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"start-server-and-test": "^2.0.8",
@@ -25,6 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sparticuz/chromium": "^130.0.0"
+		"@sparticuz/chromium": "^130.0.0",
+		"puppeteer-core": "23.6"
 	}
 }
